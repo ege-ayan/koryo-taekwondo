@@ -29,7 +29,7 @@ export default function Navbar() {
           className="flex items-center justify-center transition-opacity duration-200 hover:opacity-90"
         >
           <Image
-            src="/koryo-taekwondo-logo.webp"
+            src="/images/common/koryo-taekwondo-logo.webp"
             alt="Koryo Spor Logo"
             priority
             width={144}
