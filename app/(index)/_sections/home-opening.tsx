@@ -53,7 +53,7 @@ export default function HomeOpening() {
               BİZE ULAŞIN
             </Link>
             <Link
-              href="/programlarimiz"
+              href="/programlar"
               className="inline-flex items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/40 hover:bg-zinc-900 hover:border-zinc-500 backdrop-blur-sm px-8 py-4 text-base font-bold tracking-wider text-zinc-300 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 text-center"
             >
               PROGRAMLARIMIZ
