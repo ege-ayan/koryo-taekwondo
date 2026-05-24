@@ -11,6 +11,8 @@ export default function HomeOpening() {
           muted
           loop
           playsInline
+          preload="auto"
+          {...{ fetchPriority: "high" }}
           className="w-full h-full object-cover"
         />
       </div>

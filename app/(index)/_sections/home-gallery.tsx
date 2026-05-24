@@ -83,7 +83,7 @@ export default function HomeGallery() {
               <div className="absolute inset-0 bg-linear-to-t from-zinc-950/40 via-zinc-950/10 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
 
               {/* Glowing Outline border on hover */}
-              <div className="absolute inset-4 rounded-2xl border border-white/0 group-hover:border-white/10 transition-all duration-500" />
+              <div className="absolute inset-4 rounded-2xl border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </div>
           ))}
         </div>
