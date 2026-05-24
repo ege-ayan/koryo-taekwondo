@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 import Navbar from "@/components/common/navbar";
 import Footer from "@/components/common/footer";
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} min-h-full flex flex-col bg-zinc-950 text-white antialiased`}
       >
+        <Analytics />
         <Navbar />
         <main className="flex-1 flex flex-col">{children}</main>
         <Footer />

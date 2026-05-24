@@ -33,7 +33,7 @@ const aboutCards: AboutCard[] = [
 
 export default function HomeAboutUs() {
   return (
-    <section className="relative overflow-hidden bg-zinc-950 py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-zinc-950 py-12 sm:py-18 lg:py-24">
       {/* Decorative background glow circles */}
       <div className="absolute -left-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-red-950/10 blur-[120px] pointer-events-none" />
       <div className="absolute -right-1/4 bottom-1/4 h-[500px] w-[500px] rounded-full bg-red-950/10 blur-[120px] pointer-events-none" />

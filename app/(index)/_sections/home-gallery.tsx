@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface GalleryItem {
@@ -20,6 +20,17 @@ const galleryItems: GalleryItem[] = [
 export default function HomeGallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
+  useEffect(() => {
+    if (lightboxIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [lightboxIndex]);
+
   const handlePrev = () => {
     if (lightboxIndex === null) return;
     setLightboxIndex((prev) =>
@@ -35,7 +46,7 @@ export default function HomeGallery() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-zinc-950 py-24 lg:py-32 border-t border-zinc-900">
+    <section className="relative overflow-hidden bg-zinc-950 py-12 sm:py-18 lg:py-24 border-t border-zinc-900">
       {/* Background glow effects */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-red-950/5 blur-[150px] pointer-events-none" />
 
@@ -80,11 +91,17 @@ export default function HomeGallery() {
 
       {/* Lightbox / Modal */}
       {lightboxIndex !== null && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md select-none">
+        <div
+          onClick={() => setLightboxIndex(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md select-none cursor-zoom-out"
+        >
           {/* Close button */}
           <button
-            onClick={() => setLightboxIndex(null)}
-            className="absolute top-6 right-6 z-55 rounded-full bg-zinc-900/80 p-3 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-all duration-200 border border-zinc-800"
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightboxIndex(null);
+            }}
+            className="absolute top-6 right-6 z-55 rounded-full bg-zinc-900/80 p-3 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-all duration-200 border border-zinc-800 cursor-pointer"
             aria-label="Kapat"
           >
             <svg
@@ -104,8 +121,11 @@ export default function HomeGallery() {
 
           {/* Left Navigation Arrow */}
           <button
-            onClick={handlePrev}
-            className="absolute left-6 z-55 rounded-full bg-zinc-900/80 p-4 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-all duration-200 border border-zinc-800"
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePrev();
+            }}
+            className="absolute left-6 z-55 rounded-full bg-zinc-900/80 p-4 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-all duration-200 border border-zinc-800 cursor-pointer"
             aria-label="Önceki görsel"
           >
             <svg
@@ -125,8 +145,11 @@ export default function HomeGallery() {
 
           {/* Right Navigation Arrow */}
           <button
-            onClick={handleNext}
-            className="absolute right-6 z-55 rounded-full bg-zinc-900/80 p-4 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-all duration-200 border border-zinc-800"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleNext();
+            }}
+            className="absolute right-6 z-55 rounded-full bg-zinc-900/80 p-4 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-all duration-200 border border-zinc-800 cursor-pointer"
             aria-label="Sonraki görsel"
           >
             <svg
@@ -145,13 +168,16 @@ export default function HomeGallery() {
           </button>
 
           {/* Main Large Image Container */}
-          <div className="relative w-[90vw] h-[75vh] max-w-5xl">
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-[90vw] sm:w-[85vw] md:w-[75vw] max-w-4xl aspect-4/3 max-h-[75vh] cursor-default overflow-hidden rounded-3xl border border-zinc-800/80 shadow-2xl bg-zinc-950"
+          >
             <Image
               src={galleryItems[lightboxIndex].src}
               alt="Koryo Taekwondo Galeri Tam Ekran Görseli"
               fill
-              className="object-contain"
-              sizes="90vw"
+              className="object-cover"
+              sizes="(max-width: 768px) 90vw, 75vw"
               priority
             />
           </div>

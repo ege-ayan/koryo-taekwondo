@@ -23,7 +23,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-zinc-900 bg-zinc-950/90 backdrop-blur-md">
+    <header className="sticky top-0 z-100 w-full border-b border-zinc-900 bg-zinc-950/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8">
         <Link
           href="/"
@@ -76,10 +76,10 @@ export default function Navbar() {
 
       {/* Mobile Navigation Drawer */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`absolute left-0 right-0 top-full border-b border-zinc-900 bg-zinc-950/95 backdrop-blur-md shadow-2xl transition-all duration-300 ease-in-out md:hidden ${
           isOpen
-            ? "max-h-[300px] border-t border-zinc-900 bg-zinc-950"
-            : "max-h-0"
+            ? "translate-y-0 opacity-100 visible pointer-events-auto"
+            : "-translate-y-2 opacity-0 invisible pointer-events-none"
         }`}
         id="mobile-menu"
       >
