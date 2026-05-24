@@ -14,15 +14,15 @@ export default function HomeOpening() {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="absolute inset-0 bg-linear-to-r from-zinc-950/80 via-zinc-950/45 to-transparent" />
-      <div className="absolute inset-0 bg-linear-to-t from-zinc-950/50 via-transparent to-zinc-950/20" />
+      <div className="absolute inset-0 bg-linear-to-r from-zinc-950/88 via-zinc-950/50 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-zinc-950/50 via-transparent to-zinc-950/25" />
 
       {/* Content Container */}
-      <div className="relative z-10 mx-auto max-w-7xl w-full flex flex-col justify-center">
+      <div className="relative z-10 mx-auto max-w-7xl w-full flex flex-col justify-center animate-fade-in">
         <div className="max-w-3xl space-y-8">
           {/* Main Headings */}
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]">
               KORYO{" "}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-red-600 to-red-400">
                 TAEKWONDO
@@ -30,14 +30,14 @@ export default function HomeOpening() {
               <br />
               YAŞAMKENT
             </h1>
-            <p className="text-lg sm:text-xl font-medium tracking-wide text-zinc-300">
+            <p className="text-lg sm:text-xl font-bold tracking-wide text-zinc-100 drop-shadow-md">
               Çocuk Spor Eğitimi • Taekwondo Eğitimi • Ankara Taekwondo Spor
               Kulübü
             </p>
           </div>
 
           {/* Description Paragraph */}
-          <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl font-light">
+          <p className="text-base sm:text-lg text-zinc-200 leading-relaxed max-w-2xl font-normal drop-shadow-md">
             Türkiye ve Avrupa Şampiyonu Erkan Ercan liderliğindeki Ankara
             Yaşamkent’teki modern salonumuzda, 5 yaşından itibaren her yaş
             grubuna ve seviyeye uygun profesyonel taekwondo eğitimleri
@@ -48,13 +48,13 @@ export default function HomeOpening() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
             <Link
               href="/iletisim"
-              className="inline-flex items-center justify-center rounded-full bg-[#821111] hover:bg-[#ad1a1a] px-8 py-4 text-base font-bold tracking-wider text-white shadow-lg shadow-red-950/50 transition-all duration-300 hover:scale-105 active:scale-95 text-center"
+              className="inline-flex items-center justify-center rounded-full bg-[#ad1a1a] px-8 py-4 text-base font-bold tracking-wider text-white shadow-lg shadow-red-950/50 transition-all duration-300 hover:scale-105 active:scale-95 text-center"
             >
               BİZE ULAŞIN
             </Link>
             <Link
               href="/programlar"
-              className="inline-flex items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/40 hover:bg-zinc-900 hover:border-zinc-500 backdrop-blur-sm px-8 py-4 text-base font-bold tracking-wider text-zinc-300 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 text-center"
+              className="inline-flex items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/40 hover:bg-zinc-900 hover:border-zinc-500 backdrop-blur-sm px-8 py-4 text-base font-bold tracking-wider text-zinc-100 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 text-center"
             >
               PROGRAMLARIMIZ
             </Link>
@@ -63,26 +63,26 @@ export default function HomeOpening() {
           {/* Stats / Value Highlights */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-12 border-t border-zinc-900/60 max-w-xl">
             <div className="space-y-1">
-              <span className="block text-2xl font-bold text-white">
+              <span className="block text-2xl font-extrabold text-white drop-shadow-md">
                 5+ Yaş
               </span>
-              <span className="block text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              <span className="block text-xs font-bold uppercase tracking-wider text-zinc-300 drop-shadow-sm">
                 Her Yaş Grubuna Özel
               </span>
             </div>
             <div className="space-y-1">
-              <span className="block text-2xl font-bold text-red-500">
+              <span className="block text-2xl font-extrabold text-red-500 drop-shadow-md">
                 Şampiyon
               </span>
-              <span className="block text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              <span className="block text-xs font-bold uppercase tracking-wider text-zinc-300 drop-shadow-sm">
                 Milli Antrenörler
               </span>
             </div>
             <div className="space-y-1">
-              <span className="block text-2xl font-bold text-white">
+              <span className="block text-2xl font-extrabold text-white drop-shadow-md">
                 Modern
               </span>
-              <span className="block text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              <span className="block text-xs font-bold uppercase tracking-wider text-zinc-300 drop-shadow-sm">
                 Güvenli Spor Salonu
               </span>
             </div>
